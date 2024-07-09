@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1200</width>
+    <width>1250</width>
     <height>800</height>
    </rect>
   </property>
@@ -18,13 +18,13 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>1200</width>
+    <width>1250</width>
     <height>800</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>1200</width>
+    <width>1250</width>
     <height>800</height>
    </size>
   </property>
@@ -43,7 +43,7 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>202</width>
+      <width>211</width>
       <height>801</height>
      </rect>
     </property>
@@ -58,6 +58,9 @@
        </property>
        <property name="text">
         <string>Sales Analysis</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
@@ -81,7 +84,8 @@
      <item>
       <widget class="QLabel" name="label_2">
        <property name="styleSheet">
-        <string notr="true">color: #fff; font-size:14px;font-weight:bold;</string>
+        <string notr="true">color: #fff; font-size:14px;font-weight:bold;
+margin: 3px;</string>
        </property>
        <property name="text">
         <string>Tables</string>
@@ -91,11 +95,20 @@
      <item>
       <widget class="QPushButton" name="sales_table_btn">
        <property name="styleSheet">
-        <string notr="true">color:#fff; border-radius:10px;
+        <string notr="true">QPushButton{
+color:#fff; border-radius:10px;
 border: 1px solid gray;
 border-radius:2px;
 font-size:14px;
-padding: 2px 2px 2px  2px;</string>
+padding: 2px 2px 2px  2px;
+position:relative;
+margin: 2px 6px;
+}
+
+QPushButton:hover{
+	background-color:rgb(0, 0, 127)
+}
+</string>
        </property>
        <property name="text">
         <string>Sales table</string>
@@ -105,11 +118,20 @@ padding: 2px 2px 2px  2px;</string>
      <item>
       <widget class="QPushButton" name="sale_numeric_table_btn">
        <property name="styleSheet">
-        <string notr="true">color:#fff; border-radius:10px;
+        <string notr="true">QPushButton{
+color:#fff; border-radius:10px;
 border: 1px solid gray;
 border-radius:2px;
 font-size:14px;
-padding: 2px 2px 2px  2px;</string>
+padding: 2px 2px 2px  2px;
+position:relative;
+margin: 2px 6px;
+}
+
+QPushButton:hover{
+	background-color:rgb(0, 0, 127)
+}
+</string>
        </property>
        <property name="text">
         <string>Sale Numeric Table</string>
@@ -132,7 +154,8 @@ padding: 2px 2px 2px  2px;</string>
      <item>
       <widget class="QLabel" name="label_3">
        <property name="styleSheet">
-        <string notr="true">color: #fff; font-size:14px;font-weight:bold;</string>
+        <string notr="true">color: #fff; font-size:14px;font-weight:bold;
+margin: 3px;</string>
        </property>
        <property name="text">
         <string>Correlations</string>
@@ -142,11 +165,20 @@ padding: 2px 2px 2px  2px;</string>
      <item>
       <widget class="QPushButton" name="product_line_city_btn">
        <property name="styleSheet">
-        <string notr="true">color:#fff; border-radius:10px;
+        <string notr="true">QPushButton{
+color:#fff; border-radius:10px;
 border: 1px solid gray;
 border-radius:2px;
 font-size:14px;
-padding: 2px 2px 2px  2px;</string>
+padding: 2px 2px 2px  2px;
+position:relative;
+margin: 2px 6px;
+}
+
+QPushButton:hover{
+	background-color:rgb(0, 0, 127)
+}
+</string>
        </property>
        <property name="text">
         <string>Product Line - City</string>
@@ -156,11 +188,20 @@ padding: 2px 2px 2px  2px;</string>
      <item>
       <widget class="QPushButton" name="product_line_gender_btn">
        <property name="styleSheet">
-        <string notr="true">color:#fff; border-radius:10px;
+        <string notr="true">QPushButton{
+color:#fff; border-radius:10px;
 border: 1px solid gray;
 border-radius:2px;
 font-size:14px;
-padding: 2px 2px 2px  2px;</string>
+padding: 2px 2px 2px  2px;
+position:relative;
+margin: 2px 6px;
+}
+
+QPushButton:hover{
+	background-color:rgb(0, 0, 127)
+}
+</string>
        </property>
        <property name="text">
         <string>Product Line - Gender</string>
@@ -170,11 +211,20 @@ padding: 2px 2px 2px  2px;</string>
      <item>
       <widget class="QPushButton" name="city_gender_btn">
        <property name="styleSheet">
-        <string notr="true">color:#fff; border-radius:10px;
+        <string notr="true">QPushButton{
+color:#fff; border-radius:10px;
 border: 1px solid gray;
 border-radius:2px;
 font-size:14px;
-padding: 2px 2px 2px  2px;</string>
+padding: 2px 2px 2px  2px;
+position:relative;
+margin: 2px 6px;
+}
+
+QPushButton:hover{
+	background-color:rgb(0, 0, 127)
+}
+</string>
        </property>
        <property name="text">
         <string>City - Gender</string>
@@ -184,11 +234,20 @@ padding: 2px 2px 2px  2px;</string>
      <item>
       <widget class="QPushButton" name="city_client_type_btn">
        <property name="styleSheet">
-        <string notr="true">color:#fff; border-radius:10px;
+        <string notr="true">QPushButton{
+color:#fff; border-radius:10px;
 border: 1px solid gray;
 border-radius:2px;
 font-size:14px;
-padding: 2px 2px 2px  2px;</string>
+padding: 2px 2px 2px  2px;
+position:relative;
+margin: 2px 6px;
+}
+
+QPushButton:hover{
+	background-color:rgb(0, 0, 127)
+}
+</string>
        </property>
        <property name="text">
         <string>City - Client Type</string>
@@ -198,11 +257,20 @@ padding: 2px 2px 2px  2px;</string>
      <item>
       <widget class="QPushButton" name="product_line_client_type_btn">
        <property name="styleSheet">
-        <string notr="true">color:#fff; border-radius:10px;
+        <string notr="true">QPushButton{
+color:#fff; border-radius:10px;
 border: 1px solid gray;
 border-radius:2px;
 font-size:14px;
-padding: 2px 2px 2px  2px;</string>
+padding: 2px 2px 2px  2px;
+position:relative;
+margin: 2px 6px;
+}
+
+QPushButton:hover{
+	background-color:rgb(0, 0, 127)
+}
+</string>
        </property>
        <property name="text">
         <string>Product  Line - Client Type</string>
@@ -227,9 +295,9 @@ padding: 2px 2px 2px  2px;</string>
    <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
-      <x>200</x>
-      <y>0</y>
-      <width>991</width>
+      <x>220</x>
+      <y>10</y>
+      <width>1021</width>
       <height>801</height>
      </rect>
     </property>
@@ -256,9 +324,9 @@ padding: 2px 2px 2px  2px;</string>
      <widget class="QTableWidget" name="sales_table">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>50</y>
-        <width>981</width>
+        <x>0</x>
+        <y>40</y>
+        <width>1011</width>
         <height>741</height>
        </rect>
       </property>
