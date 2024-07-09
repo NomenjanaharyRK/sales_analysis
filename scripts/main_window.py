@@ -1,7 +1,8 @@
 import sys
-import pandas as pd
 from PyQt5 import uic
-from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QStackedWidget, QTableWidget, QTableWidgetItem
+from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QStackedWidget, QTableWidget
+from sales_table import SalesTable
+from sales_numerics_table import SalesNumericsTable
 
 
 class MainWindow(QMainWindow):
@@ -10,7 +11,13 @@ class MainWindow(QMainWindow):
         uic.loadUi("../sales_analysis.ui", self)
 
         self.stackedWidget = self.findChild(QStackedWidget, "stackedWidget")
-        self.sales_table = self.findChild(QTableWidget, "sales_table")
+        self.stackedWidget.setCurrentIndex(-1)
+
+        self.sales_table_widget = self.findChild(QTableWidget, "sales_table")
+        self.sales_table = SalesTable(self.sales_table_widget)
+
+        self.sales_numeric_table = self.findChild(QTableWidget, "sales_numeric_table")
+        self.sales_numeric_table = SalesNumericsTable(self.sales_numeric_table)
 
         # SETTINGS SIDEBAR BUTTONS
         self.sales_table_btn = self.findChild(QPushButton, "sales_table_btn")
@@ -30,19 +37,9 @@ class MainWindow(QMainWindow):
         self.city_client_type_btn.clicked.connect(self.show_city_client_type_page)
         self.product_line_client_type_btn.clicked.connect(self.show_product_line_client_type_page)
 
-        self.load_data()
-
-    def load_data(self):
-        interest_columns = ['Invoice ID', 'Branch', 'City', 'Customer type', 'Gender', 'Product line', 'Total','Date','Time','Quantity', 'Rating']
-        df = pd.read_csv('../data/supermarket_sales_data.csv', usecols= interest_columns)
-
-        self.sales_table.setRowCount(len(df))
-        self.sales_table.setColumnCount(len(df.columns))
-        self.sales_table.setHorizontalHeaderLabels(df.columns)
-
-        for i in range(len(df)):
-            for j in range(len(df.columns)):
-                self.sales_table.setItem(i, j, QTableWidgetItem(str(df.iloc[i, j])))
+        # Load data into the pages
+        self.sales_table.load_data('../data/supermarket_sales_data.csv')
+        self.sales_numeric_table.load_data('../data/supermarket_sales_data.csv')
 
     def show_sales_table_page(self):
         self.stackedWidget.setCurrentIndex(0)
