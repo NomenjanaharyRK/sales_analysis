@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c3565436-5d4e-47b2-80b0-c474a79e06d3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/supermarket_sales_sheet1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/supermarket_sales_data.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sales_analysis.ui" beforeDir="false" afterPath="$PROJECT_DIR$/sales_analysis.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/main_window.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +23,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="vcs://C:/Users/RAKOTOMAHERY/PycharmProjects/marketing_sales_data_analysis/src/dashboard.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -102,5 +105,29 @@
       <updated>1720463831208</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="date">
+                    <value>
+                      <list>
+                        <option value="1720471531737" />
+                        <option value="" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
