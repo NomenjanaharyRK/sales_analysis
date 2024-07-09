@@ -11,14 +11,16 @@ def main():
     # Load Data
     df = pd.read_csv("../data/supermarket_sales_sheet1.csv")
 
-    df["City"] = df["City"].astype('category').cat.codes
-    df["Gender"] = df["Gender"].astype('category').cat.codes
-    df["Customer type"] = df["Customer type"].astype('category').cat.codes
-    df["Product line"] = df["Product line"].astype('category').cat.codes
-    df["Branch"] = df["Branch"].astype('category').cat.codes
+    # df["City"] = df["City"].astype('category').cat.codes
+    # df["Gender"] = df["Gender"].astype('category').cat.codes
+    # df["Customer type"] = df["Customer type"].astype('category').cat.codes
+    # df["Product line"] = df["Product line"].astype('category').cat.codes
+    # df["Branch"] = df["Branch"].astype('category').cat.codes
+
+    dataframe = pd.get_dummies(df, drop_first=True)
 
     # Create Analysis Object
-    analysis = SalesDataAnalysis(df)
+    analysis = SalesDataAnalysis(dataframe)
 
     # Create and show Dashboard
     dashboard = Dashboard(analysis)
