@@ -1,6 +1,7 @@
 import sys
 from PyQt5 import uic
 from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow, QPushButton, QStackedWidget, QTableWidget, QVBoxLayout
+from PyQt5.QtCore import Qt
 from sales_table import SalesTable
 from sales_numerics_table import SalesNumericsTable
 from city_product_line_correlation_table import CityProductLineCorrelation
@@ -13,8 +14,13 @@ from product_line_client_type import ProductLineCustomerTypeCorrelation
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.product_line_client_type_canvas = None
         uic.loadUi("../sales_analysis.ui", self)
+        self.setWindowFlag(Qt.FramelessWindowHint)
+
+        self.product_line_client_type_canvas = None
+
+        self.exit_app_btn = self.findChild(QPushButton, "exit_app_btn")
+        self.exit_app_btn.clicked.connect(self.close)
 
         self.stackedWidget = self.findChild(QStackedWidget, "stackedWidget")
         self.stackedWidget.setCurrentIndex(7)

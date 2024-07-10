@@ -8,7 +8,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sales_analysis.ui" beforeDir="false" afterPath="$PROJECT_DIR$/sales_analysis.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/main_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/product_line_client_type.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/product_line_client_type.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +118,7 @@
                   <entry key="date">
                     <value>
                       <list>
-                        <option value="1720471531737" />
+                        <option value="1719992877979" />
                         <option value="" />
                       </list>
                     </value>

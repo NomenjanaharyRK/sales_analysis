@@ -31,6 +31,9 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color:#fff;</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <property name="minimumSize">
     <size>
@@ -284,6 +287,31 @@ QPushButton:hover{
          </property>
         </spacer>
        </item>
+       <item>
+        <widget class="QPushButton" name="exit_app_btn">
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+color:#fff; border-radius:10px;
+border: 1px solid gray;
+border-radius:2px;
+font-size:14px;
+padding: 2px 2px 2px  2px;
+position:relative;
+margin: 2px 6px;
+background-color:rgb(255, 26, 87)
+}
+
+QPushButton:hover{
+background-color:gray;
+}
+	
+</string>
+         </property>
+         <property name="text">
+          <string>Quit</string>
+         </property>
+        </widget>
+       </item>
       </layout>
      </widget>
     </item>
@@ -385,7 +413,14 @@ QPushButton:hover{
           <item>
            <layout class="QFormLayout" name="formLayout_2">
             <item row="0" column="0">
-             <widget class="QTableWidget" name="gender_product_line_table"/>
+             <widget class="QTableWidget" name="gender_product_line_table">
+              <property name="minimumSize">
+               <size>
+                <width>300</width>
+                <height>0</height>
+               </size>
+              </property>
+             </widget>
             </item>
             <item row="0" column="1">
              <widget class="QWidget" name="widget_3" native="true">
@@ -417,7 +452,14 @@ QPushButton:hover{
           <item>
            <layout class="QFormLayout" name="formLayout_3">
             <item row="0" column="0">
-             <widget class="QTableWidget" name="city_gender_correlation_table"/>
+             <widget class="QTableWidget" name="city_gender_correlation_table">
+              <property name="minimumSize">
+               <size>
+                <width>300</width>
+                <height>0</height>
+               </size>
+              </property>
+             </widget>
             </item>
             <item row="0" column="1">
              <widget class="QWidget" name="widget_4" native="true">
@@ -449,7 +491,14 @@ QPushButton:hover{
           <item>
            <layout class="QFormLayout" name="formLayout_4">
             <item row="0" column="0">
-             <widget class="QTableWidget" name="city_client_type_table"/>
+             <widget class="QTableWidget" name="city_client_type_table">
+              <property name="minimumSize">
+               <size>
+                <width>300</width>
+                <height>0</height>
+               </size>
+              </property>
+             </widget>
             </item>
             <item row="0" column="1">
              <widget class="QWidget" name="widget_5" native="true">
