@@ -293,7 +293,7 @@ QPushButton:hover{
        <string notr="true">background-color:#fff;</string>
       </property>
       <property name="currentIndex">
-       <number>7</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="page">
        <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -346,7 +346,14 @@ QPushButton:hover{
           <item>
            <layout class="QFormLayout" name="formLayout">
             <item row="0" column="0">
-             <widget class="QTableWidget" name="city_product_line_table"/>
+             <widget class="QTableWidget" name="city_product_line_correlation_table">
+              <property name="minimumSize">
+               <size>
+                <width>300</width>
+                <height>0</height>
+               </size>
+              </property>
+             </widget>
             </item>
             <item row="0" column="1">
              <widget class="QWidget" name="widget_2" native="true">
@@ -474,7 +481,14 @@ QPushButton:hover{
           <item>
            <layout class="QFormLayout" name="formLayout_5">
             <item row="0" column="0">
-             <widget class="QTableWidget" name="product_line_client_type_table"/>
+             <widget class="QTableWidget" name="product_line_client_type_table">
+              <property name="minimumSize">
+               <size>
+                <width>600</width>
+                <height>0</height>
+               </size>
+              </property>
+             </widget>
             </item>
             <item row="0" column="1">
              <widget class="QWidget" name="widget_6" native="true">

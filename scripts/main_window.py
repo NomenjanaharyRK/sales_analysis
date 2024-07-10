@@ -3,6 +3,7 @@ from PyQt5 import uic
 from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QStackedWidget, QTableWidget
 from sales_table import SalesTable
 from sales_numerics_table import SalesNumericsTable
+from city_product_line_correlation_table import CityProductLineCorrelation
 
 
 class MainWindow(QMainWindow):
@@ -11,13 +12,16 @@ class MainWindow(QMainWindow):
         uic.loadUi("../sales_analysis.ui", self)
 
         self.stackedWidget = self.findChild(QStackedWidget, "stackedWidget")
-        self.stackedWidget.setCurrentIndex(-1)
+        self.stackedWidget.setCurrentIndex(7)
 
         self.sales_table_widget = self.findChild(QTableWidget, "sales_table")
         self.sales_table = SalesTable(self.sales_table_widget)
 
         self.sales_numeric_table = self.findChild(QTableWidget, "sales_numeric_table")
         self.sales_numeric_table = SalesNumericsTable(self.sales_numeric_table)
+
+        self.city_product_line_correlation_table = self.findChild(QTableWidget, "city_product_line_correlation_table")
+        self.city_product_line_correlation_table = CityProductLineCorrelation(self.city_product_line_correlation_table)
 
         # SETTINGS SIDEBAR BUTTONS
         self.sales_table_btn = self.findChild(QPushButton, "sales_table_btn")
@@ -40,6 +44,7 @@ class MainWindow(QMainWindow):
         # Load data into the pages
         self.sales_table.load_data('../data/supermarket_sales_data.csv')
         self.sales_numeric_table.load_data('../data/supermarket_sales_data.csv')
+        self.city_product_line_correlation_table.load_data('../data/supermarket_sales_data.csv')
 
     def show_sales_table_page(self):
         self.stackedWidget.setCurrentIndex(0)
