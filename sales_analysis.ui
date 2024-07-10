@@ -293,7 +293,7 @@ QPushButton:hover{
        <string notr="true">background-color:#fff;</string>
       </property>
       <property name="currentIndex">
-       <number>5</number>
+       <number>6</number>
       </property>
       <widget class="QWidget" name="page">
        <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -484,7 +484,7 @@ QPushButton:hover{
              <widget class="QTableWidget" name="product_line_client_type_table">
               <property name="minimumSize">
                <size>
-                <width>600</width>
+                <width>300</width>
                 <height>0</height>
                </size>
               </property>
