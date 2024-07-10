@@ -293,7 +293,7 @@ QPushButton:hover{
        <string notr="true">background-color:#fff;</string>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>4</number>
       </property>
       <widget class="QWidget" name="page">
        <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -417,7 +417,7 @@ QPushButton:hover{
           <item>
            <layout class="QFormLayout" name="formLayout_3">
             <item row="0" column="0">
-             <widget class="QTableWidget" name="city_gender_table"/>
+             <widget class="QTableWidget" name="city_gender_correlation_table"/>
             </item>
             <item row="0" column="1">
              <widget class="QWidget" name="widget_4" native="true">
