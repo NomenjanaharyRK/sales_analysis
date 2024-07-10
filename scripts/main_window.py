@@ -6,6 +6,7 @@ from sales_numerics_table import SalesNumericsTable
 from city_product_line_correlation_table import CityProductLineCorrelation
 from gender_product_line_table import GenderProductLineCorrelation
 from city_gender_correlation_table import CityGenderCorrelation
+from city_customer_type_correlation_table import CityCustomerTypeCorrelation
 
 
 class MainWindow(QMainWindow):
@@ -31,6 +32,9 @@ class MainWindow(QMainWindow):
         self.city_gender_correlation_table = self.findChild(QTableWidget, "city_gender_correlation_table")
         self.city_gender_correlation_table = CityGenderCorrelation(self.city_gender_correlation_table)
 
+        self.city_client_type_table = self.findChild(QTableWidget, "city_client_type_table")
+        self.city_client_type_table = CityCustomerTypeCorrelation(self.city_client_type_table)
+
         # SETTINGS SIDEBAR BUTTONS
         self.sales_table_btn = self.findChild(QPushButton, "sales_table_btn")
         self.sale_numeric_table_btn = self.findChild(QPushButton, "sale_numeric_table_btn")
@@ -55,6 +59,7 @@ class MainWindow(QMainWindow):
         self.city_product_line_correlation_table.load_data('../data/supermarket_sales_data.csv')
         self.gender_product_line_table.load_data('../data/supermarket_sales_data.csv')
         self.city_gender_correlation_table.load_data('../data/supermarket_sales_data.csv')
+        self.city_client_type_table.load_data('../data/supermarket_sales_data.csv')
 
     def show_sales_table_page(self):
         self.stackedWidget.setCurrentIndex(0)
