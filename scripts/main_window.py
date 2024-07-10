@@ -1,6 +1,6 @@
 import sys
 from PyQt5 import uic
-from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QStackedWidget, QTableWidget
+from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow, QPushButton, QStackedWidget, QTableWidget, QVBoxLayout
 from sales_table import SalesTable
 from sales_numerics_table import SalesNumericsTable
 from city_product_line_correlation_table import CityProductLineCorrelation
@@ -13,6 +13,7 @@ from product_line_client_type import ProductLineCustomerTypeCorrelation
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
+        self.product_line_client_type_canvas = None
         uic.loadUi("../sales_analysis.ui", self)
 
         self.stackedWidget = self.findChild(QStackedWidget, "stackedWidget")
@@ -38,6 +39,10 @@ class MainWindow(QMainWindow):
 
         self.product_line_client_type_table = self.findChild(QTableWidget, "product_line_client_type_table")
         self.product_line_client_type_table = ProductLineCustomerTypeCorrelation(self.product_line_client_type_table)
+
+        # Widget for figure
+        self.correlation_figure_product_line_client_type = self.findChild(QWidget, "correlation_figure_product_line_client_type")
+        self.product_line_customer_type_layout = self.findChild(QVBoxLayout, "product_line_customer_type_layout")
 
         # SETTINGS SIDEBAR BUTTONS
         self.sales_table_btn = self.findChild(QPushButton, "sales_table_btn")
@@ -65,6 +70,12 @@ class MainWindow(QMainWindow):
         self.city_gender_correlation_table.load_data('../data/supermarket_sales_data.csv')
         self.city_client_type_table.load_data('../data/supermarket_sales_data.csv')
         self.product_line_client_type_table.load_data('../data/supermarket_sales_data.csv')
+
+        self.add_correlation_plot()
+
+    def add_correlation_plot(self):
+        self.product_line_client_type_canvas = self.product_line_client_type_table.draw_figure()
+        self.product_line_customer_type_layout.addWidget(self.product_line_client_type_canvas)
 
     def show_sales_table_page(self):
         self.stackedWidget.setCurrentIndex(0)
