@@ -1,14 +1,11 @@
 import sys
 from PyQt5 import uic
-from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow, QPushButton, QStackedWidget, QTableWidget, QVBoxLayout
+from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QPushButton, QStackedWidget, QTableWidget, QVBoxLayout
 from PyQt5.QtCore import Qt
-from sales_table import SalesTable
-from sales_numerics_table import SalesNumericsTable
-from city_product_line_correlation_table import CityProductLineCorrelation
-from gender_product_line_table import GenderProductLineCorrelation
-from city_gender_correlation_table import CityGenderCorrelation
-from city_customer_type_correlation_table import CityCustomerTypeCorrelation
-from product_line_client_type import ProductLineCustomerTypeCorrelation
+from scripts.tables.sales_table import SalesTable
+from scripts.tables.sales_numerics_table import SalesNumericsTable
+from scripts.tables.sales_statistics_table import SalesStatisticsTable
+from scripts.figures.correlation_sales_figure import CorrelationSalesFigure
 
 
 class MainWindow(QMainWindow):
@@ -17,92 +14,77 @@ class MainWindow(QMainWindow):
         uic.loadUi("../sales_analysis.ui", self)
         self.setWindowFlag(Qt.FramelessWindowHint)
 
-        self.product_line_client_type_canvas = None
-
-        self.exit_app_btn = self.findChild(QPushButton, "exit_app_btn")
-        self.exit_app_btn.clicked.connect(self.close)
-
         self.stackedWidget = self.findChild(QStackedWidget, "stackedWidget")
         self.stackedWidget.setCurrentIndex(7)
 
+        self.sales_data_csv = "../data/supermarket_sales_data.csv"
+
+        # TableWidget Setting
         self.sales_table_widget = self.findChild(QTableWidget, "sales_table")
-        self.sales_table = SalesTable(self.sales_table_widget)
-
         self.sales_numeric_table = self.findChild(QTableWidget, "sales_numeric_table")
-        self.sales_numeric_table = SalesNumericsTable(self.sales_numeric_table)
+        self.sales_statistics_table = self.findChild(QTableWidget, "sales_statistics_table")
 
-        self.gender_product_line_table = self.findChild(QTableWidget, "gender_product_line_table")
-        self.gender_product_line_table = GenderProductLineCorrelation(self.gender_product_line_table)
+        self.sales_table = SalesTable(self.sales_table_widget, self.sales_data_csv)
+        self.sales_numeric_table = SalesNumericsTable(self.sales_numeric_table, self.sales_data_csv)
+        self.sales_statistics_table = SalesStatisticsTable(self.sales_statistics_table, self.sales_data_csv)
 
-        self.city_product_line_correlation_table = self.findChild(QTableWidget, "city_product_line_correlation_table")
-        self.city_product_line_correlation_table = CityProductLineCorrelation(self.city_product_line_correlation_table)
+        # Figures Widgets
+        self.correlation_sales_widget = self.findChild(QWidget, "correlation_sales_widget")
+        self.correlation_sales_layout = self.findChild(QVBoxLayout, "correlation_sales_layout")
 
-        self.city_gender_correlation_table = self.findChild(QTableWidget, "city_gender_correlation_table")
-        self.city_gender_correlation_table = CityGenderCorrelation(self.city_gender_correlation_table)
+        # Draw Figures
+        self.correlation_sales_figure = CorrelationSalesFigure(self.sales_data_csv)
+        self.sales_correlation_canvas = self.correlation_sales_figure.draw_figure()
 
-        self.city_client_type_table = self.findChild(QTableWidget, "city_client_type_table")
-        self.city_client_type_table = CityCustomerTypeCorrelation(self.city_client_type_table)
+        self.correlation_sales_layout.addWidget(self.sales_correlation_canvas)
 
-        self.product_line_client_type_table = self.findChild(QTableWidget, "product_line_client_type_table")
-        self.product_line_client_type_table = ProductLineCustomerTypeCorrelation(self.product_line_client_type_table)
-
-        # Widget for figure
-        self.correlation_figure_product_line_client_type = self.findChild(QWidget, "correlation_figure_product_line_client_type")
-        self.product_line_customer_type_layout = self.findChild(QVBoxLayout, "product_line_customer_type_layout")
-
-        # SETTINGS SIDEBAR BUTTONS
+        # SideBar Buttons Setting
         self.sales_table_btn = self.findChild(QPushButton, "sales_table_btn")
-        self.sale_numeric_table_btn = self.findChild(QPushButton, "sale_numeric_table_btn")
-        self.product_line_city_btn = self.findChild(QPushButton, "product_line_city_btn")
-        self.product_line_gender_btn = self.findChild(QPushButton, "product_line_gender_btn")
-        self.city_gender_btn = self.findChild(QPushButton, "city_gender_btn")
-        self.city_client_type_btn = self.findChild(QPushButton, "city_client_type_btn")
+        self.sales_numeric_table_btn = self.findChild(QPushButton, "sales_numeric_table_btn")
+        self.sales_statistics_table_btn = self.findChild(QPushButton, "sales_statistics_table_btn")
+        self.correlation_sales_btn = self.findChild(QPushButton, "correlation_sales_btn")
+        self.correlation_product_line_gender_city_btn = self.findChild(QPushButton,"correlation_product_line_gender_city_btn")
+        self.correlation_product_line_rating_btn = self.findChild(QPushButton, "correlation_product_line_rating_btn")
+        self.correlation_product_line_city_branch_btn = self.findChild(QPushButton, "correlation_product_line_city_branch_btn")
+        self.correlation_product_line_city_client_type = self.findChild(QPushButton, "correlation_product_line_city_client_type")
         self.product_line_client_type_btn = self.findChild(QPushButton, "product_line_client_type_btn")
+        self.exit_app_btn = self.findChild(QPushButton, "exit_app_btn")
 
-        # CONNECT BUTTONS FUNCTION
-        self.sales_table_btn.clicked.connect(self.show_sales_table_page)
-        self.sale_numeric_table_btn.clicked.connect(self.show_sales_numeric_table_page)
-        self.product_line_city_btn.clicked.connect(self.show_product_line_city_page)
-        self.product_line_gender_btn.clicked.connect(self.show_product_line_gender_page)
-        self.city_gender_btn.clicked.connect(self.show_city_gender_page)
-        self.city_client_type_btn.clicked.connect(self.show_city_client_type_page)
-        self.product_line_client_type_btn.clicked.connect(self.show_product_line_client_type_page)
+        # Connect SideBar Buttons
+        self.exit_app_btn.clicked.connect(self.close)
+        self.sales_table_btn.clicked.connect(self.show_sales_table)
+        self.sales_numeric_table_btn.clicked.connect(self.show_sales_numeric_table)
+        self.sales_statistics_table_btn.clicked.connect(self.show_sales_statistics_table)
+        self.correlation_sales_btn.clicked.connect(self.show_correlation_sales)
+        self.correlation_product_line_gender_city_btn.clicked.connect(self.show_correlation_product_line_gender_city)
+        self.correlation_product_line_rating_btn.clicked.connect(self.show_correlation_product_line_rating)
+        self.correlation_product_line_city_branch_btn.clicked.connect(self.show_correlation_product_line_city_branch)
+        self.correlation_product_line_city_client_type.clicked.connect(self.show_correlation_product_line_city_client_type)
 
-        # Load data into the pages
-        self.sales_table.load_data('../data/supermarket_sales_data.csv')
-        self.sales_numeric_table.load_data('../data/supermarket_sales_data.csv')
-        self.city_product_line_correlation_table.load_data('../data/supermarket_sales_data.csv')
-        self.gender_product_line_table.load_data('../data/supermarket_sales_data.csv')
-        self.city_gender_correlation_table.load_data('../data/supermarket_sales_data.csv')
-        self.city_client_type_table.load_data('../data/supermarket_sales_data.csv')
-        self.product_line_client_type_table.load_data('../data/supermarket_sales_data.csv')
-
-        self.add_correlation_plot()
-
-    def add_correlation_plot(self):
-        self.product_line_client_type_canvas = self.product_line_client_type_table.draw_figure()
-        self.product_line_customer_type_layout.addWidget(self.product_line_client_type_canvas)
-
-    def show_sales_table_page(self):
+    def show_sales_table(self):
         self.stackedWidget.setCurrentIndex(0)
 
-    def show_sales_numeric_table_page(self):
+    def show_sales_numeric_table(self):
         self.stackedWidget.setCurrentIndex(1)
 
-    def show_product_line_city_page(self):
+    def show_sales_statistics_table(self):
         self.stackedWidget.setCurrentIndex(2)
 
-    def show_product_line_gender_page(self):
+    def show_correlation_sales(self):
         self.stackedWidget.setCurrentIndex(3)
+        self.sales_correlation_canvas.draw()
 
-    def show_city_gender_page(self):
+    def show_correlation_product_line_gender_city(self):
         self.stackedWidget.setCurrentIndex(4)
 
-    def show_city_client_type_page(self):
+    def show_correlation_product_line_rating(self):
         self.stackedWidget.setCurrentIndex(5)
 
-    def show_product_line_client_type_page(self):
+    def show_correlation_product_line_city_branch(self):
         self.stackedWidget.setCurrentIndex(6)
+
+    def show_correlation_product_line_city_client_type(self):
+        self.stackedWidget.setCurrentIndex(8)
 
 
 if __name__ == "__main__":

@@ -32,7 +32,11 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color:#fff;</string>
+   <string notr="true">QMainWindow{
+background-color:#fff;
+margin:0px;
+padding:0px;
+}</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="minimumSize">
@@ -113,7 +117,7 @@ QPushButton:hover{
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="sale_numeric_table_btn">
+        <widget class="QPushButton" name="sales_numeric_table_btn">
          <property name="styleSheet">
           <string notr="true">QPushButton{
 color:#fff; border-radius:10px;
@@ -131,7 +135,30 @@ QPushButton:hover{
 </string>
          </property>
          <property name="text">
-          <string>Sale Numeric Table</string>
+          <string>Sales Numeric Table</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="sales_statistics_table_btn">
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+color:#fff; border-radius:10px;
+border: 1px solid gray;
+border-radius:2px;
+font-size:14px;
+padding: 2px 2px 2px  2px;
+position:relative;
+margin: 2px 6px;
+}
+
+QPushButton:hover{
+	background-color:rgb(0, 0, 127)
+}
+</string>
+         </property>
+         <property name="text">
+          <string>Sales Statistics Table</string>
          </property>
         </widget>
        </item>
@@ -160,7 +187,7 @@ margin: 3px;</string>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="product_line_city_btn">
+        <widget class="QPushButton" name="correlation_sales_btn">
          <property name="styleSheet">
           <string notr="true">QPushButton{
 color:#fff; border-radius:10px;
@@ -178,12 +205,12 @@ QPushButton:hover{
 </string>
          </property>
          <property name="text">
-          <string>Product Line - City</string>
+          <string>Sales</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="product_line_gender_btn">
+        <widget class="QPushButton" name="correlation_product_line_gender_city_btn">
          <property name="styleSheet">
           <string notr="true">QPushButton{
 color:#fff; border-radius:10px;
@@ -201,12 +228,12 @@ QPushButton:hover{
 </string>
          </property>
          <property name="text">
-          <string>Product Line - Gender</string>
+          <string>Product Line Gender City</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="city_gender_btn">
+        <widget class="QPushButton" name="correlation_product_line_rating_btn">
          <property name="styleSheet">
           <string notr="true">QPushButton{
 color:#fff; border-radius:10px;
@@ -224,12 +251,12 @@ QPushButton:hover{
 </string>
          </property>
          <property name="text">
-          <string>City - Gender</string>
+          <string>Product Line Rating</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="city_client_type_btn">
+        <widget class="QPushButton" name="correlation_product_line_city_branch_btn">
          <property name="styleSheet">
           <string notr="true">QPushButton{
 color:#fff; border-radius:10px;
@@ -247,12 +274,12 @@ QPushButton:hover{
 </string>
          </property>
          <property name="text">
-          <string>City - Client Type</string>
+          <string>Product Line City Branch</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="product_line_client_type_btn">
+        <widget class="QPushButton" name="correlation_product_line_city_client_type">
          <property name="styleSheet">
           <string notr="true">QPushButton{
 color:#fff; border-radius:10px;
@@ -270,7 +297,7 @@ QPushButton:hover{
 </string>
          </property>
          <property name="text">
-          <string>Product  Line - Client Type</string>
+          <string>Product Line City Client Type</string>
          </property>
         </widget>
        </item>
@@ -321,7 +348,7 @@ background-color:gray;
        <string notr="true">background-color:#fff;</string>
       </property>
       <property name="currentIndex">
-       <number>6</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="page">
        <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -357,44 +384,71 @@ background-color:gray;
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="page_3">
-       <layout class="QVBoxLayout" name="verticalLayout_5">
+      <widget class="QWidget" name="page_9">
+       <layout class="QVBoxLayout" name="verticalLayout_14">
         <item>
-         <layout class="QVBoxLayout" name="verticalLayout_4">
+         <layout class="QVBoxLayout" name="verticalLayout_12">
           <item>
-           <widget class="QLabel" name="label_6">
+           <widget class="QLabel" name="label_12">
             <property name="styleSheet">
              <string notr="true">color: rgb(7, 3, 30); font-size:24px;font-weight: bold;</string>
             </property>
             <property name="text">
-             <string>Correlation Between City and Product Line</string>
+             <string>Sales Statistics Table</string>
             </property>
            </widget>
           </item>
           <item>
-           <layout class="QFormLayout" name="formLayout">
-            <item row="0" column="0">
-             <widget class="QTableWidget" name="city_product_line_correlation_table">
-              <property name="minimumSize">
-               <size>
-                <width>300</width>
-                <height>0</height>
-               </size>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="1">
-             <widget class="QWidget" name="widget_2" native="true">
-              <property name="styleSheet">
-               <string notr="true">background-color:rgb(255, 255, 255)</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
+           <widget class="QTableWidget" name="sales_statistics_table"/>
           </item>
          </layout>
         </item>
        </layout>
+      </widget>
+      <widget class="QWidget" name="page_3">
+       <widget class="QWidget" name="">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>20</y>
+          <width>1142</width>
+          <height>857</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_5">
+         <item>
+          <widget class="QLabel" name="label_6">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(7, 3, 30); font-size:24px;font-weight: bold;</string>
+           </property>
+           <property name="text">
+            <string>Correlation Sales</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QWidget" name="correlation_sales_widget" native="true">
+           <property name="minimumSize">
+            <size>
+             <width>1140</width>
+             <height>820</height>
+            </size>
+           </property>
+           <widget class="QWidget" name="verticalLayoutWidget">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>10</y>
+              <width>1121</width>
+              <height>801</height>
+             </rect>
+            </property>
+            <layout class="QVBoxLayout" name="correlation_sales_layout"/>
+           </widget>
+          </widget>
+         </item>
+        </layout>
+       </widget>
       </widget>
       <widget class="QWidget" name="page_4">
        <layout class="QVBoxLayout" name="verticalLayout_7">
@@ -406,24 +460,14 @@ background-color:gray;
              <string notr="true">color: rgb(7, 3, 30); font-size:24px;font-weight: bold;</string>
             </property>
             <property name="text">
-             <string>Correlation Between Gender and Product Line</string>
+             <string>Correlation Between Product Line, Gender, City</string>
             </property>
            </widget>
           </item>
           <item>
            <layout class="QFormLayout" name="formLayout_2">
-            <item row="0" column="0">
-             <widget class="QTableWidget" name="gender_product_line_table">
-              <property name="minimumSize">
-               <size>
-                <width>300</width>
-                <height>0</height>
-               </size>
-              </property>
-             </widget>
-            </item>
             <item row="0" column="1">
-             <widget class="QWidget" name="widget_3" native="true">
+             <widget class="QWidget" name="correlation_product_line_gender_city" native="true">
               <property name="styleSheet">
                <string notr="true">background-color:rgb(255, 255, 255)</string>
               </property>
@@ -445,22 +489,12 @@ background-color:gray;
              <string notr="true">color: rgb(7, 3, 30); font-size:24px;font-weight: bold;</string>
             </property>
             <property name="text">
-             <string>Correlation Between City and Gender</string>
+             <string>Correlation Product Line and Client Rating</string>
             </property>
            </widget>
           </item>
           <item>
            <layout class="QFormLayout" name="formLayout_3">
-            <item row="0" column="0">
-             <widget class="QTableWidget" name="city_gender_correlation_table">
-              <property name="minimumSize">
-               <size>
-                <width>300</width>
-                <height>0</height>
-               </size>
-              </property>
-             </widget>
-            </item>
             <item row="0" column="1">
              <widget class="QWidget" name="widget_4" native="true">
               <property name="styleSheet">
@@ -484,71 +518,17 @@ background-color:gray;
              <string notr="true">color: rgb(7, 3, 30); font-size:24px;font-weight: bold;</string>
             </property>
             <property name="text">
-             <string>Correlation Between City and Client Type</string>
+             <string>Correlation Product Line, City and Branch</string>
             </property>
            </widget>
           </item>
           <item>
            <layout class="QFormLayout" name="formLayout_4">
-            <item row="0" column="0">
-             <widget class="QTableWidget" name="city_client_type_table">
-              <property name="minimumSize">
-               <size>
-                <width>300</width>
-                <height>0</height>
-               </size>
-              </property>
-             </widget>
-            </item>
             <item row="0" column="1">
-             <widget class="QWidget" name="widget_5" native="true">
+             <widget class="QWidget" name="correlation_product_line_city_branch" native="true">
               <property name="styleSheet">
                <string notr="true">background-color:rgb(255, 255, 255)</string>
               </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
-         </layout>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="page_7">
-       <layout class="QHBoxLayout" name="horizontalLayout_2">
-        <item>
-         <layout class="QVBoxLayout" name="verticalLayout_12">
-          <item>
-           <widget class="QLabel" name="label_10">
-            <property name="styleSheet">
-             <string notr="true">color: rgb(7, 3, 30); font-size:24px;font-weight: bold;</string>
-            </property>
-            <property name="text">
-             <string>Correlation Between Product Line and Client Type</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <layout class="QFormLayout" name="formLayout_5">
-            <item row="0" column="0">
-             <widget class="QTableWidget" name="product_line_client_type_table">
-              <property name="minimumSize">
-               <size>
-                <width>300</width>
-                <height>0</height>
-               </size>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="1">
-             <widget class="QWidget" name="correlation_figure_product_line_client_type" native="true">
-              <property name="styleSheet">
-               <string notr="true">background-color:rgb(255, 255, 255)</string>
-              </property>
-              <layout class="QVBoxLayout" name="verticalLayout_15">
-               <item>
-                <layout class="QVBoxLayout" name="product_line_customer_type_layout"/>
-               </item>
-              </layout>
              </widget>
             </item>
            </layout>
@@ -558,29 +538,26 @@ background-color:gray;
        </layout>
       </widget>
       <widget class="QWidget" name="page_8">
-       <widget class="QWidget" name="widget_7" native="true">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>60</y>
-          <width>1190</width>
-          <height>746</height>
-         </rect>
-        </property>
-        <layout class="QVBoxLayout" name="verticalLayout_13">
-         <item>
-          <widget class="QLabel" name="label_11">
-           <property name="text">
-            <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap>../../Downloads/analysis.png</pixmap>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
+       <layout class="QVBoxLayout" name="verticalLayout_16">
+        <item>
+         <widget class="QWidget" name="widget_7" native="true">
+          <layout class="QVBoxLayout" name="verticalLayout_13">
+           <item>
+            <widget class="QLabel" name="label_11">
+             <property name="text">
+              <string/>
+             </property>
+             <property name="pixmap">
+              <pixmap>../../Downloads/analysis.png</pixmap>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
       </widget>
+      <widget class="QWidget" name="page_7"/>
      </widget>
     </item>
    </layout>

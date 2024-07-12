@@ -3,12 +3,14 @@ from PyQt5.QtWidgets import QTableWidget, QTableWidgetItem
 
 
 class SalesTable:
-    def __init__(self, table_widget: QTableWidget):
+    def __init__(self, table_widget: QTableWidget, file_path: str):
         self.table_widget = table_widget
+        self.file_path = file_path
+        self.load_data()
 
-    def load_data(self, file_path: str):
+    def load_data(self):
         interest_columns = ['Invoice ID', 'Branch', 'City', 'Customer type', 'Gender', 'Product line', 'Total', 'Date', 'Time', 'Quantity', 'Rating']
-        df = pd.read_csv(file_path, usecols=interest_columns)
+        df = pd.read_csv(self.file_path, usecols=interest_columns)
 
         self.table_widget.setRowCount(len(df))
         self.table_widget.setColumnCount(len(df.columns))
