@@ -9,7 +9,8 @@ class SalesStatisticsTable:
         self.load_data()
 
     def load_data(self):
-        interest_columns = ['Invoice ID', 'Branch', 'City', 'Customer type', 'Gender', 'Product line', 'Total', 'Date','Time', 'Quantity', 'Rating']
+        interest_columns = ['Invoice ID', 'Branch', 'City', 'Customer type', 'Gender', 'Product line', 'Total', 'Date',
+                            'Time', 'Quantity', 'Rating']
         df = pd.read_csv(self.file_path, usecols=interest_columns)
 
         df['Invoice ID'] = df['Invoice ID'].astype("category").cat.codes
@@ -34,4 +35,3 @@ class SalesStatisticsTable:
         for i in range(len(statistics)):
             for j in range(len(statistics.columns)):
                 self.table_widget.setItem(i, j, QTableWidgetItem(str(statistics.iloc[i, j])))
-

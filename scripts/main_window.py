@@ -6,6 +6,7 @@ from scripts.tables.sales_table import SalesTable
 from scripts.tables.sales_numerics_table import SalesNumericsTable
 from scripts.tables.sales_statistics_table import SalesStatisticsTable
 from scripts.figures.correlation_sales_figure import CorrelationSalesFigure
+from scripts.figures.product_sales_by_city import ProductSalesByCity
 
 
 class MainWindow(QMainWindow):
@@ -32,18 +33,25 @@ class MainWindow(QMainWindow):
         self.correlation_sales_widget = self.findChild(QWidget, "correlation_sales_widget")
         self.correlation_sales_layout = self.findChild(QVBoxLayout, "correlation_sales_layout")
 
+        self.relation_product_line_gender_city_widget = self.findChild(QWidget, "relation_product_line_gender_city")
+        self.relation_product_line_gender_city_layout = self.findChild(QVBoxLayout, "relation_product_line_gender_city_layout")
+
         # Draw Figures
         self.correlation_sales_figure = CorrelationSalesFigure(self.sales_data_csv)
         self.sales_correlation_canvas = self.correlation_sales_figure.draw_figure()
-
         self.correlation_sales_layout.addWidget(self.sales_correlation_canvas)
+
+        self.product_sales_by_city_gender = ProductSalesByCity(self.sales_data_csv)
+        self.relation_product_line_by_city_and_gender_canvas = self.product_sales_by_city_gender.draw_figure()
+        self.relation_product_line_gender_city_layout.addWidget(self.relation_product_line_by_city_and_gender_canvas)
 
         # SideBar Buttons Setting
         self.sales_table_btn = self.findChild(QPushButton, "sales_table_btn")
         self.sales_numeric_table_btn = self.findChild(QPushButton, "sales_numeric_table_btn")
         self.sales_statistics_table_btn = self.findChild(QPushButton, "sales_statistics_table_btn")
         self.correlation_sales_btn = self.findChild(QPushButton, "correlation_sales_btn")
-        self.correlation_product_line_gender_city_btn = self.findChild(QPushButton,"correlation_product_line_gender_city_btn")
+        self.product_line_sales_by_city_btn = self.findChild(QPushButton, "product_line_sales_by_city_btn")
+        self.product_line_sales_by_city_gender_btn = self.findChild(QPushButton, "product_line_sales_by_city_gender_btn")
         self.correlation_product_line_rating_btn = self.findChild(QPushButton, "correlation_product_line_rating_btn")
         self.correlation_product_line_city_branch_btn = self.findChild(QPushButton, "correlation_product_line_city_branch_btn")
         self.correlation_product_line_city_client_type = self.findChild(QPushButton, "correlation_product_line_city_client_type")
@@ -56,7 +64,8 @@ class MainWindow(QMainWindow):
         self.sales_numeric_table_btn.clicked.connect(self.show_sales_numeric_table)
         self.sales_statistics_table_btn.clicked.connect(self.show_sales_statistics_table)
         self.correlation_sales_btn.clicked.connect(self.show_correlation_sales)
-        self.correlation_product_line_gender_city_btn.clicked.connect(self.show_correlation_product_line_gender_city)
+        self.product_line_sales_by_city_btn.clicked.connect(self.show_product_line_sales_by_city)
+        self.product_line_sales_by_city_gender_btn.clicked.connect(self.show_product_line_sales_by_city_and_genre)
         self.correlation_product_line_rating_btn.clicked.connect(self.show_correlation_product_line_rating)
         self.correlation_product_line_city_branch_btn.clicked.connect(self.show_correlation_product_line_city_branch)
         self.correlation_product_line_city_client_type.clicked.connect(self.show_correlation_product_line_city_client_type)
@@ -72,19 +81,21 @@ class MainWindow(QMainWindow):
 
     def show_correlation_sales(self):
         self.stackedWidget.setCurrentIndex(3)
-        self.sales_correlation_canvas.draw()
 
-    def show_correlation_product_line_gender_city(self):
+    def show_product_line_sales_by_city(self):
         self.stackedWidget.setCurrentIndex(4)
 
-    def show_correlation_product_line_rating(self):
+    def show_product_line_sales_by_city_and_genre(self):
         self.stackedWidget.setCurrentIndex(5)
 
-    def show_correlation_product_line_city_branch(self):
+    def show_correlation_product_line_rating(self):
         self.stackedWidget.setCurrentIndex(6)
 
-    def show_correlation_product_line_city_client_type(self):
+    def show_correlation_product_line_city_branch(self):
         self.stackedWidget.setCurrentIndex(8)
+
+    def show_correlation_product_line_city_client_type(self):
+        self.stackedWidget.setCurrentIndex(9)
 
 
 if __name__ == "__main__":

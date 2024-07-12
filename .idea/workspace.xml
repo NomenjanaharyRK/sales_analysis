@@ -6,11 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="c3565436-5d4e-47b2-80b0-c474a79e06d3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sales_analysis.ui" beforeDir="false" afterPath="$PROJECT_DIR$/sales_analysis.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/figures/correlation_sales_figure.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/figures/correlation_sales_figure.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/main_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/sales_numerics_table.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/tables/sales_numerics_table.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/sales_table.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/tables/sales_table.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/tables/sales_numerics_table.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/tables/sales_numerics_table.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/tables/sales_statistics_table.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/tables/sales_statistics_table.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +30,9 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="vcs://C:/Users/RAKOTOMAHERY/PycharmProjects/marketing_sales_data_analysis/src/dashboard.py" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8

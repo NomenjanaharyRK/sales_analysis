@@ -13,8 +13,7 @@ class CorrelationSalesFigure:
         self.canvas = None
 
     def draw_figure(self):
-        interest_columns = ['Invoice ID', 'Branch', 'City', 'Customer type', 'Gender', 'Product line', 'Total', 'Date',
-                            'Time', 'Quantity', 'Rating']
+        interest_columns = ['Invoice ID', 'Branch', 'City', 'Customer type', 'Gender', 'Product line', 'Total', 'Date', 'Time', 'Quantity', 'Rating']
         df = pd.read_csv(self.file_path, usecols=interest_columns)
 
         df['Invoice ID'] = df['Invoice ID'].astype("category").cat.codes
