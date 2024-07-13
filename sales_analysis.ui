@@ -528,29 +528,29 @@ background-color:gray;
        </widget>
       </widget>
       <widget class="QWidget" name="page_5">
-       <layout class="QVBoxLayout" name="verticalLayout_9">
+       <layout class="QVBoxLayout" name="verticalLayout_7">
         <item>
-         <layout class="QVBoxLayout" name="verticalLayout_8">
+         <layout class="QVBoxLayout" name="verticalLayout_4">
           <item>
-           <widget class="QLabel" name="label_8">
-            <property name="styleSheet">
-             <string notr="true">color: rgb(7, 3, 30); font-size:24px;font-weight: bold;</string>
+           <widget class="QWidget" name="product_line_city_gender_widget" native="true">
+            <property name="minimumSize">
+             <size>
+              <width>1120</width>
+              <height>820</height>
+             </size>
             </property>
-            <property name="text">
-             <string>Plot Product line by City and Gender</string>
+            <property name="maximumSize">
+             <size>
+              <width>1120</width>
+              <height>820</height>
+             </size>
             </property>
+            <layout class="QVBoxLayout" name="verticalLayout_6">
+             <item>
+              <layout class="QVBoxLayout" name="product_line_city_gender_layout"/>
+             </item>
+            </layout>
            </widget>
-          </item>
-          <item>
-           <layout class="QFormLayout" name="formLayout_3">
-            <item row="0" column="1">
-             <widget class="QWidget" name="widget_4" native="true">
-              <property name="styleSheet">
-               <string notr="true">background-color:rgb(255, 255, 255)</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
           </item>
          </layout>
         </item>

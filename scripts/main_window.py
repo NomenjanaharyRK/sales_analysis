@@ -7,6 +7,7 @@ from scripts.tables.sales_numerics_table import SalesNumericsTable
 from scripts.tables.sales_statistics_table import SalesStatisticsTable
 from scripts.figures.correlation_sales_figure import CorrelationSalesFigure
 from scripts.figures.product_sales_by_city import ProductSalesByCity
+from scripts.figures.product_line_by_city_and_gender import ProductSalesByCityAndGender
 
 
 class MainWindow(QMainWindow):
@@ -34,16 +35,23 @@ class MainWindow(QMainWindow):
         self.correlation_sales_layout = self.findChild(QVBoxLayout, "correlation_sales_layout")
 
         self.relation_product_line_gender_city_widget = self.findChild(QWidget, "relation_product_line_gender_city")
-        self.relation_product_line_gender_city_layout = self.findChild(QVBoxLayout, "relation_product_line_gender_city_layout")
+        self.relation_product_line_city_layout = self.findChild(QVBoxLayout, "relation_product_line_gender_city_layout")
+
+        self.product_line_city_gender_widget = self.findChild(QWidget, "product_line_city_gender_widget")
+        self.relation_product_line_city_gender_layout = self.findChild(QVBoxLayout, "product_line_city_gender_layout")
 
         # Draw Figures
         self.correlation_sales_figure = CorrelationSalesFigure(self.sales_data_csv)
         self.sales_correlation_canvas = self.correlation_sales_figure.draw_figure()
         self.correlation_sales_layout.addWidget(self.sales_correlation_canvas)
 
-        self.product_sales_by_city_gender = ProductSalesByCity(self.sales_data_csv)
-        self.relation_product_line_by_city_and_gender_canvas = self.product_sales_by_city_gender.draw_figure()
-        self.relation_product_line_gender_city_layout.addWidget(self.relation_product_line_by_city_and_gender_canvas)
+        self.product_sales_by_city = ProductSalesByCity(self.sales_data_csv)
+        self.relation_product_line_by_city_canvas = self.product_sales_by_city.draw_figure()
+        self.relation_product_line_city_layout.addWidget(self.relation_product_line_by_city_canvas)
+
+        self.product_sales_by_city_gender = ProductSalesByCityAndGender(self.sales_data_csv)
+        self.relation_product_line_by_city_gender_canvas = self.product_sales_by_city_gender.draw_figure()
+        self.relation_product_line_city_gender_layout.addWidget(self.relation_product_line_by_city_gender_canvas)
 
         # SideBar Buttons Setting
         self.sales_table_btn = self.findChild(QPushButton, "sales_table_btn")
