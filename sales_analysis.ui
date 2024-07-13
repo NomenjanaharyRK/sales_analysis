@@ -256,7 +256,7 @@ QPushButton:hover{
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="correlation_product_line_rating_btn">
+        <widget class="QPushButton" name="product_line_rating_btn">
          <property name="styleSheet">
           <string notr="true">QPushButton{
 color:#fff; border-radius:10px;
@@ -371,7 +371,7 @@ background-color:gray;
        <string notr="true">background-color:#fff;</string>
       </property>
       <property name="currentIndex">
-       <number>5</number>
+       <number>6</number>
       </property>
       <widget class="QWidget" name="page">
        <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -557,33 +557,49 @@ background-color:gray;
        </layout>
       </widget>
       <widget class="QWidget" name="page_6">
-       <layout class="QVBoxLayout" name="verticalLayout_11">
-        <item>
-         <layout class="QVBoxLayout" name="verticalLayout_10">
-          <item>
-           <widget class="QLabel" name="label_9">
-            <property name="styleSheet">
-             <string notr="true">color: rgb(7, 3, 30); font-size:24px;font-weight: bold;</string>
-            </property>
-            <property name="text">
-             <string>Correlation Product Line, City and Branch</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <layout class="QFormLayout" name="formLayout_4">
-            <item row="0" column="1">
-             <widget class="QWidget" name="correlation_product_line_city_branch" native="true">
-              <property name="styleSheet">
-               <string notr="true">background-color:rgb(255, 255, 255)</string>
-              </property>
-             </widget>
+       <widget class="QWidget" name="">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>1122</width>
+          <height>867</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_8">
+         <item>
+          <widget class="QLabel" name="label_8">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(7, 3, 30); font-size:24px;font-weight: bold;</string>
+           </property>
+           <property name="text">
+            <string>Product line Rating by City</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QWidget" name="product_line_rating_city_widget" native="true">
+           <property name="minimumSize">
+            <size>
+             <width>1120</width>
+             <height>830</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>1120</width>
+             <height>830</height>
+            </size>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_10">
+            <item>
+             <layout class="QVBoxLayout" name="product_line_by_rating_and_city_layout"/>
             </item>
            </layout>
-          </item>
-         </layout>
-        </item>
-       </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
       </widget>
       <widget class="QWidget" name="page_8">
        <layout class="QVBoxLayout" name="verticalLayout_16">
