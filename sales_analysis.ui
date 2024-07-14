@@ -279,7 +279,7 @@ QPushButton:hover{
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="correlation_product_line_city_branch_btn">
+        <widget class="QPushButton" name="linear_regression_btn">
          <property name="styleSheet">
           <string notr="true">QPushButton{
 color:#fff; border-radius:10px;
@@ -297,12 +297,12 @@ QPushButton:hover{
 </string>
          </property>
          <property name="text">
-          <string>Product Line City Branch</string>
+          <string>Linear Regression</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="correlation_product_line_city_client_type">
+        <widget class="QPushButton" name="classification_btn">
          <property name="styleSheet">
           <string notr="true">QPushButton{
 color:#fff; border-radius:10px;
@@ -320,7 +320,7 @@ QPushButton:hover{
 </string>
          </property>
          <property name="text">
-          <string>Product Line City Client Type</string>
+          <string>Classification</string>
          </property>
         </widget>
        </item>
@@ -371,7 +371,7 @@ background-color:gray;
        <string notr="true">background-color:#fff;</string>
       </property>
       <property name="currentIndex">
-       <number>6</number>
+       <number>8</number>
       </property>
       <widget class="QWidget" name="page">
        <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -557,7 +557,7 @@ background-color:gray;
        </layout>
       </widget>
       <widget class="QWidget" name="page_6">
-       <widget class="QWidget" name="">
+       <widget class="QWidget" name="layoutWidget">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -621,7 +621,43 @@ background-color:gray;
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="page_7"/>
+      <widget class="QWidget" name="page_7">
+       <widget class="QLabel" name="label_9">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>221</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(7, 3, 30); font-size:24px;font-weight: bold;
+</string>
+        </property>
+        <property name="text">
+         <string>Linear Regression</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page_10">
+       <widget class="QLabel" name="label_10">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>171</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(7, 3, 30); font-size:24px;font-weight: bold;</string>
+        </property>
+        <property name="text">
+         <string>Classification</string>
+        </property>
+       </widget>
+      </widget>
      </widget>
     </item>
    </layout>

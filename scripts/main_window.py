@@ -70,12 +70,11 @@ class MainWindow(QMainWindow):
         self.product_line_sales_by_city_gender_btn = self.findChild(QPushButton, "product_line_sales_by_city_gender_btn")
         self.product_line_rating_btn = self.findChild(QPushButton, "product_line_rating_btn")
 
-        self.correlation_product_line_city_client_type = self.findChild(QPushButton, "correlation_product_line_city_client_type")
-        self.product_line_client_type_btn = self.findChild(QPushButton, "product_line_client_type_btn")
+        self.linear_regression_btn = self.findChild(QPushButton, "linear_regression_btn")
+        self.classification_btn = self.findChild(QPushButton, "classification_btn")
         self.exit_app_btn = self.findChild(QPushButton, "exit_app_btn")
 
         # Connect SideBar Buttons
-        self.exit_app_btn.clicked.connect(self.close)
         self.sales_table_btn.clicked.connect(self.show_sales_table)
         self.sales_numeric_table_btn.clicked.connect(self.show_sales_numeric_table)
         self.sales_statistics_table_btn.clicked.connect(self.show_sales_statistics_table)
@@ -83,7 +82,9 @@ class MainWindow(QMainWindow):
         self.product_line_sales_by_city_btn.clicked.connect(self.show_product_line_sales_by_city)
         self.product_line_sales_by_city_gender_btn.clicked.connect(self.show_product_line_sales_by_city_and_genre)
         self.product_line_rating_btn.clicked.connect(self.show_product_line_rating)
-        self.correlation_product_line_city_client_type.clicked.connect(self.show_correlation_product_line_city_client_type)
+        self.linear_regression_btn.clicked.connect(self.show_linear_regression_page)
+        self.classification_btn.clicked.connect(self.show_classification_page)
+        self.exit_app_btn.clicked.connect(self.close)
 
     def show_sales_table(self):
         self.stackedWidget.setCurrentIndex(0)
@@ -106,10 +107,10 @@ class MainWindow(QMainWindow):
     def show_product_line_rating(self):
         self.stackedWidget.setCurrentIndex(6)
 
-    def show_correlation_product_line_city_branch(self):
+    def show_linear_regression_page(self):
         self.stackedWidget.setCurrentIndex(8)
 
-    def show_correlation_product_line_city_client_type(self):
+    def show_classification_page(self):
         self.stackedWidget.setCurrentIndex(9)
 
 

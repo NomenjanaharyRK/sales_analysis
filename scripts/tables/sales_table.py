@@ -9,8 +9,8 @@ class SalesTable:
         self.load_data()
 
     def load_data(self):
-        interest_columns = ['Invoice ID', 'Branch', 'City', 'Customer type', 'Gender', 'Product line', 'Total', 'Date', 'Time', 'Quantity', 'Rating']
-        df = pd.read_csv(self.file_path, usecols=interest_columns)
+        # interest_columns = ['Invoice ID', 'Branch', 'City', 'Customer type', 'Gender', 'Product line', 'Total', 'Date', 'Time', 'Quantity', 'Rating']
+        df = pd.read_csv(self.file_path)
 
         self.table_widget.setRowCount(len(df))
         self.table_widget.setColumnCount(len(df.columns))

@@ -17,12 +17,12 @@ class ProductSalesRatingByCity:
         total_rating_by_city_product = df.groupby(['City', 'Product line'])['Rating'].sum().reset_index()
 
         # Create the grouped bar plot
-        plt.figure(figsize=(12, 6))
+        plt.figure(figsize=(16, 20))
         sns.barplot(x="Product line", y="Rating", hue="City", data=total_rating_by_city_product, palette="muted")
         plt.title("Total Product Rating by City and Product Line")
         plt.xlabel("Product Line")
         plt.ylabel("Total Rating")
-        plt.legend(title="City", bbox_to_anchor=(1.05, 1), loc='best')
+        plt.legend(title="City", bbox_to_anchor=(1.05, 1), loc="best")
         plt.xticks(rotation=15)
 
         self.canvas = FigureCanvas(plt.gcf())
