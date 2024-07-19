@@ -302,7 +302,7 @@ QPushButton:hover{
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="classification_btn">
+        <widget class="QPushButton" name="random_forest_btn">
          <property name="styleSheet">
           <string notr="true">QPushButton{
 color:#fff; border-radius:10px;
@@ -320,7 +320,7 @@ QPushButton:hover{
 </string>
          </property>
          <property name="text">
-          <string>Classification</string>
+          <string>Random Forest</string>
          </property>
         </widget>
        </item>
@@ -371,7 +371,7 @@ background-color:gray;
        <string notr="true">background-color:#fff;</string>
       </property>
       <property name="currentIndex">
-       <number>8</number>
+       <number>9</number>
       </property>
       <widget class="QWidget" name="page">
        <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -622,40 +622,94 @@ background-color:gray;
        </layout>
       </widget>
       <widget class="QWidget" name="page_7">
-       <widget class="QLabel" name="label_9">
+       <widget class="QWidget" name="layoutWidget">
         <property name="geometry">
          <rect>
           <x>10</x>
           <y>10</y>
-          <width>221</width>
-          <height>41</height>
+          <width>1122</width>
+          <height>867</height>
          </rect>
         </property>
-        <property name="styleSheet">
-         <string notr="true">color: rgb(7, 3, 30); font-size:24px;font-weight: bold;
+        <layout class="QVBoxLayout" name="verticalLayout_9">
+         <item>
+          <widget class="QLabel" name="label_9">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(7, 3, 30); font-size:24px;font-weight: bold;
 </string>
-        </property>
-        <property name="text">
-         <string>Linear Regression</string>
-        </property>
+           </property>
+           <property name="text">
+            <string>Linear Regression</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QWidget" name="linear_regression_widget" native="true">
+           <property name="minimumSize">
+            <size>
+             <width>1120</width>
+             <height>830</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>1120</width>
+             <height>830</height>
+            </size>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_17">
+            <item>
+             <layout class="QVBoxLayout" name="linear_regression_layout"/>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
        </widget>
       </widget>
       <widget class="QWidget" name="page_10">
-       <widget class="QLabel" name="label_10">
+       <widget class="QWidget" name="">
         <property name="geometry">
          <rect>
-          <x>10</x>
+          <x>0</x>
           <y>10</y>
-          <width>171</width>
-          <height>31</height>
+          <width>1132</width>
+          <height>877</height>
          </rect>
         </property>
-        <property name="styleSheet">
-         <string notr="true">color: rgb(7, 3, 30); font-size:24px;font-weight: bold;</string>
-        </property>
-        <property name="text">
-         <string>Classification</string>
-        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_11">
+         <item>
+          <widget class="QLabel" name="label_10">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(7, 3, 30); font-size:24px;font-weight: bold;</string>
+           </property>
+           <property name="text">
+            <string>RandomForest</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QWidget" name="random_forest_widget" native="true">
+           <property name="minimumSize">
+            <size>
+             <width>1130</width>
+             <height>840</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>1131</width>
+             <height>840</height>
+            </size>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_19">
+            <item>
+             <layout class="QVBoxLayout" name="random_forest_layout"/>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
        </widget>
       </widget>
      </widget>

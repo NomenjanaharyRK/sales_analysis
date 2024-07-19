@@ -9,6 +9,8 @@ from scripts.figures.correlation_sales_figure import CorrelationSalesFigure
 from scripts.figures.product_sales_by_city import ProductSalesByCity
 from scripts.figures.product_line_by_city_and_gender import ProductSalesByCityAndGender
 from scripts.figures.product_line_rating_by_city import ProductSalesRatingByCity
+from scripts.predictions.linear_regression import ProductSalesByCityLinearRegression
+from scripts.predictions.random_forest import ProductSalesByCityRandomForest
 
 
 class MainWindow(QMainWindow):
@@ -44,6 +46,12 @@ class MainWindow(QMainWindow):
         self.product_line_rating_city_widget = self.findChild(QWidget, "product_line_rating_city_widget")
         self.product_line_by_rating_and_city_layout = self.findChild(QVBoxLayout, "product_line_by_rating_and_city_layout")
 
+        self.linear_regression_widget = self.findChild(QWidget, "linear_regression_widget")
+        self.linear_regression_layout = self.findChild(QVBoxLayout, "linear_regression_layout")
+
+        self.random_forest_widget = self.findChild(QWidget, "random_forest_widget")
+        self.random_forest_layout = self.findChild(QVBoxLayout, "random_forest_layout")
+
         # Draw Figures
         self.correlation_sales_figure = CorrelationSalesFigure(self.sales_data_csv)
         self.sales_correlation_canvas = self.correlation_sales_figure.draw_figure()
@@ -61,6 +69,14 @@ class MainWindow(QMainWindow):
         self.product_sales_rating_by_city_canvas = self.product_sales_rating_by_city.draw_figure()
         self.product_line_by_rating_and_city_layout.addWidget(self.product_sales_rating_by_city_canvas)
 
+        self.linear_regression = ProductSalesByCityLinearRegression(self.sales_data_csv)
+        self.linear_regression_canvas = self.linear_regression.draw_figure()
+        self.linear_regression_layout.addWidget(self.linear_regression_canvas)
+
+        self.random_forest = ProductSalesByCityRandomForest(self.sales_data_csv)
+        self.random_forest_canvas = self.random_forest.draw_figure()
+        self.random_forest_layout.addWidget(self.random_forest_canvas)
+
         # SideBar Buttons Setting
         self.sales_table_btn = self.findChild(QPushButton, "sales_table_btn")
         self.sales_numeric_table_btn = self.findChild(QPushButton, "sales_numeric_table_btn")
@@ -71,7 +87,7 @@ class MainWindow(QMainWindow):
         self.product_line_rating_btn = self.findChild(QPushButton, "product_line_rating_btn")
 
         self.linear_regression_btn = self.findChild(QPushButton, "linear_regression_btn")
-        self.classification_btn = self.findChild(QPushButton, "classification_btn")
+        self.random_forest_btn = self.findChild(QPushButton, "random_forest_btn")
         self.exit_app_btn = self.findChild(QPushButton, "exit_app_btn")
 
         # Connect SideBar Buttons
@@ -83,7 +99,7 @@ class MainWindow(QMainWindow):
         self.product_line_sales_by_city_gender_btn.clicked.connect(self.show_product_line_sales_by_city_and_genre)
         self.product_line_rating_btn.clicked.connect(self.show_product_line_rating)
         self.linear_regression_btn.clicked.connect(self.show_linear_regression_page)
-        self.classification_btn.clicked.connect(self.show_classification_page)
+        self.random_forest_btn.clicked.connect(self.show_random_forest_page)
         self.exit_app_btn.clicked.connect(self.close)
 
     def show_sales_table(self):
@@ -110,7 +126,7 @@ class MainWindow(QMainWindow):
     def show_linear_regression_page(self):
         self.stackedWidget.setCurrentIndex(8)
 
-    def show_classification_page(self):
+    def show_random_forest_page(self):
         self.stackedWidget.setCurrentIndex(9)
 
 

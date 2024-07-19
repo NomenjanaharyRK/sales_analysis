@@ -6,12 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c3565436-5d4e-47b2-80b0-c474a79e06d3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sales_analysis.ui" beforeDir="false" afterPath="$PROJECT_DIR$/sales_analysis.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/figures/product_line_rating_by_city.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/figures/product_line_rating_by_city.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/main_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/tables/sales_statistics_table.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/tables/sales_statistics_table.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/tables/sales_table.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/tables/sales_table.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +46,7 @@
   &quot;keyToString&quot;: {
     &quot;Python.analysis.executor&quot;: &quot;Run&quot;,
     &quot;Python.correlation.executor&quot;: &quot;Run&quot;,
+    &quot;Python.correlation_sales_figure.executor&quot;: &quot;Run&quot;,
     &quot;Python.data_analysis.executor&quot;: &quot;Run&quot;,
     &quot;Python.main.executor&quot;: &quot;Run&quot;,
     &quot;Python.main_window.executor&quot;: &quot;Run&quot;,
